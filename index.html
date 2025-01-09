@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Higher order function </title>
+</head>
+
+<body>
+    <script>
+
+
+        // Q1 A
+
+        const integers = [1, 2, 3, 4, 5, 6, 7, 8];
+        const integers2 = [1, 2, 3, 4, 5, 6, 7, 8];
+
+        function toThePower1(input) {
+
+            let result = input.map(element => Math.pow(2, element));
+
+            return console.log('A', result);
+        }
+
+        toThePower1(integers);
+
+        // Q1 B
+
+        function toThePower2(input) {
+            let result2 = [];
+            for (i = 0; i < input.length; i++) {
+                input[i] = 2 ** input[i]
+                result2.push(input[i]);
+            }
+            return console.log('B', result2);
+        }
+
+        toThePower2(integers);
+
+        // Q1 C
+
+        function toThePower3(input) {
+            let result3 = [];
+            input.forEach(element =>
+                result3.push(Math.pow(2, element)));
+            return console.log('C', result3);
+        }
+
+        toThePower3(integers2);
+
+        // Q2
+
+        const integers3 = [1, 2, 3, 'Faisal', 5, 'Mustafa', 7, 8];
+
+        function evenOdd(input) {
+
+            let result4 = input.map(element => {
+                if (element % 2 === 0) {
+                    return 'Even'
+                } else if (element % 2 === 1) {
+                    return 'Odd'
+                } else {
+                    return 'N/A'
+                }
+            });
+            return console.log(result4);
+        }
+
+        evenOdd(integers3);
+
+        // Q3 
+
+        const namesArray = ['Rawan', 'Wesam', 'Hind', 'Muhammad', 'Esraa', 'Dareen']
+
+        namesArray.forEach((element => console.log(element)))
+
+        // Q4
+
+        const integer4 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 15, 18, 20, 30];
+
+        function fizzBuzz(input) {
+            return input.map(element => {
+                if (element % 3 === 0 && element % 5 === 0) {
+                    return 'FizzBuzz';
+                } else if (element % 3 === 0) {
+                    return 'Fizz';
+                } else if (element % 5 === 0) {
+                    return 'Buzz';
+                } else {
+                    return element;
+                }
+            });
+        }
+
+        console.log(fizzBuzz(integer4));
+
+
+    </script>
+</body>
+
+</html>
